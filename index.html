@@ -5,90 +5,200 @@
   <meta charset="UTF-8">
   <style>
     /* 👉 Task 1- Apply the reset found on this page: https://www.joshwcomeau.com/css/custom-css-reset/ */
-
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
   </style>
-  <style>
+  <style>   
+    /* <h1>HTML & CSS II</h1>
+    <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
+    <p>Work through the challenges found inside both style tags in this document.</p>
+    <p>You will find a screenshot of the end result inside the design folder.</p>
+    <p>You can now comment out the h1 and the p tags...</p> 
+
     /* 👉 Task 2- Target the body element.
     Apply a font family of Arial to the body element.
     The font property is inherited by descendant (nested) elements. */
-
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
     /* 👉 Task 3- Target the element with id headerTop.
     Apply white color to the text, some padding using px or rem units, and a dark background color. */
+    #headerTop {
+     color: white;
+     padding: 0.5rem;
+     background-color: green;
+     }
+    
 
     /* 👉 Task 4- Target the divs that are directly nested underneath the id headerTop.
     Make them display as inline block, instead of block.
     This will make them render on the same line. */
-
+    .inline-container{
+      display: inline-block;
+    }
     /* 👉 Task 5- Target the spans that are nested inside the id headerTop.
     Make them have some margin on the right.
     This will prevent the spans from crashing against one another. */
-
+      .span-container1{
+        margin-right:10px;
+        font-weight:bold;
+        text-transform: uppercase; 
+      } 
+      .span-container2{
+        margin-right: 10px;
+      }
     /* 👉 Task 6- Target the first span nested inside the element with id headerTop.
     Make it have a font weight of bold, and transform the text to uppercase. */
+    
+    /* ANSWER FOR TASK 6 IS WRITTEN ON LINE 86 AND 87!!!!!!!!!!
 
     /* 👉 Task 7- Target the id headerBottom.
     Give it a bottom border of 1 pixel, solid gray, and a little bit of padding using px or rem units. */
-
+      #headerBottom {
+        border-bottom: 8px solid gray;
+        padding: 13px
+      }
     /* 👉 Task 8- Target the divs that are nested directly inside the element with id headerBottom.
     Make them display as inline block, instead of block.
     This will cause them to render on the same line.
     You can consolidate this rule with the one on step. 4 */
 
+    #headerBottom > div {
+      display: inline-block;
+
+    }
+
     /* 👉 Task 9- Target the "Compose" button, although note it's a div instead an actual button.
     Give it color, bold text, background, padding, border radius, margin right, and a cursor of pointer. */
-
-    /* 👉 Task 10- Research how to remove all the default styling of button elements.
+      .button {
+      color:white;
+      font-weight: bold;
+      background-color:green;
+      padding: 11px;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+     /* 👉 Task 10- Research how to remove all the default styling of button elements.
     Target the button elements inside the element with id headerBottom.
     Remove all their styling, give them a bit of margin to the right, and a cursor of pointer. */
+
+    #headerBottom button {
+    padding:0;
+    border: none;
+    background: none;
+    margin-right: 10px;
+    cursor: pointer;
+    }
+
 
     /* 👉 Task 11- Target the button element inside the id headerBottom that has a class of active
     Make the font weight be bolder, and add a bottom border of 2 pixels solid color (you choose the color).
     Add the class name to the "All mail" button. */
+    #headerBottom button.active {
+      font-weight: bold;
+      border-bottom: 2px green;
+    }
 
     /* 👉 Task 12- Target all divs directly nested inside elements with a class of email,
     and make them display as inline-block elements.
     This will make each email render all its details in the same line*/
-
+    .email > div {
+      display: inline-block;
+    } 
     /* 👉 Task 13- Target the elements with a class of email.
     Give them some padding, bigger padding to the left, and a bottom border of very light grey. */
-
+    .email {
+      padding: 1px;
+      padding-left: 10px;
+      border-bottom:10px lightgrey;
+    }
     /* 👉 Task 14- Target each div inside the element with a class of email.
     Make the email author and the email subject take 35% of the width of the parent element.
     Make the check, the date and the size take up 8% of the width of the parent element.
     This will arrange the details in visible columns. */
 
+    .email-name, .email-subject{
+      width: 35%;
+    }
+    .email-check, .email-date, .email-size{
+      width: 8%;
+    }
+
     /* 👉 Task 15- Target the second email and have its font weight be bold.
     This will make it look "unread". */
+
+    .email:nth-child(2){
+      font-weight: bold;
+    }
+
 
     /* Well done! Check the design file to make sure you are close enough. */
 
   </style>
   <title>Document</title>
 </head>
-
 <body>
   <div id="instructions">
-    <h1>HTML & CSS II</h1>
-    <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
-    <p>Work through the challenges found inside both style tags in this document.</p>
-    <p>You will find a screenshot of the end result inside the design folder.</p>
-    <p>You can now comment out the h1 and the p tags...</p>
   </div>
   <div>
     <header>
-      <div id="headerTop">
-        <div>
-          <span>Super Mail</span>
-          <span>Jess</span>
+      <div id="headerTop"> 
+         <div class = "inline-container">
+          <span class="span-container1">Super Mail</span> 
+          <span class="span-container2">Jess</span>
         </div>
-        <div>
+         <div class = "inline-container">
           <input type="text" placeholder="Search Mail" />
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
+        <div class = "button">Compose</div>
         <div>
-          <button>All mail</button>
+          <button class="active">All mail</button>
           <button>Unread</button>
           <button>Pinned</button>
           <button>VIPs</button>
@@ -105,7 +215,7 @@
       </div>
     </main>
   </div>
-
+   
   <script>
     // ❗ Note: do not change ids or class names inside the main element
     // or the following code to programmatically add emails will stop working
